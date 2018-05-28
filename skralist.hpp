@@ -19,8 +19,15 @@ public:
 
     /*
      * Returns the value at the front of the list
+     * O(1)
      */
     int head();
+
+    /*
+     * Returns and deletes the value at the front of the list
+     * O(1)
+     */
+    int pop();
 
 
     // debugging function

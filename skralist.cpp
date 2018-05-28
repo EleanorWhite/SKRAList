@@ -46,14 +46,41 @@ void Skralist::pushElem(int val) {
 
 int Skralist::head() {
     
-    for (auto i = trees.begin(); i != trees.end(); ++i) {
-        if (*i != nullptr) {
-            return (*i)->value; // always return the root of the tree
-        }
+    auto fst = trees.begin();
+    if (*fst != nullptr) {
+         return (*fst)->value; // always return the root of the tree
     }
     throw "The list is empty";    
 }
 
+
+int Skralist::pop() {
+    auto fst = trees.begin();
+    if (*fst == nullptr) {
+        throw "The list is empty";    
+    }
+
+    else if (!(*fst)->hasChildren()) {
+        int retval = trees.front()->value;
+        trees.pop_front();
+        return retval;
+    }
+
+    else {
+        int retval = (*fst)->value;
+        Node* l = (*fst)->left;
+        Node* r = (*fst)->right;
+
+        *fst = r;
+        trees.push_front(l);
+
+        return retval;
+
+    }
+
+
+return 0;
+}
 
 
 int Skralist::getElem(int n) {

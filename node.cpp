@@ -31,3 +31,8 @@ int Node::getElem(int n) {
        return right->getElem( n-((size-1)/2)-1);
    }
 }
+
+
+bool Node::hasChildren() {
+    return (left != nullptr) && (right != nullptr);
+}

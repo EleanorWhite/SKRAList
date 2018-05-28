@@ -29,6 +29,12 @@ public:
      * O(1)
      */
     void setChildren(Node* l, Node* r);
+
+    /*
+     * Returns true if the Node has children, and false otherwise
+     */
+    bool hasChildren();
+
 private:
     // nothing, for now
 
