@@ -15,7 +15,7 @@ int main() {
    
    int numTest = 30;
 
-   // push 1-10
+   // push 0-numTest
    for (int i = 0; i < numTest; ++i) {
        skrl->pushElem(i);
        assert(skrl->head() == i);
@@ -32,6 +32,22 @@ int main() {
        assert(skrl->pop() == i);
    }
    std::cout << "Successfully checked that 0-" << (numTest-1) << " were popped\n";
+
+
+   // push 0-numTest
+   for (int i = 0; i < numTest; ++i) {
+       skrl->pushElem(i);
+       assert(skrl->head() == i);
+   }
+   std::cout << "Successfully pushed 0-" << (numTest-1) << "\n";
+
+   for (int i = 0; i < numTest; ++i) {
+       Skralist copySkrl = *skrl;
+       copySkrl.drop(i);
+       assert(copySkrl.head() == (numTest-i-1));
+       //assert(copySkrl->size == numTest-i);
+   }
+   std::cout << "Successfully tested drop\n";
 
    return 0;
 

@@ -29,6 +29,10 @@ public:
      */
     int pop();
 
+    /*
+     * Drops the first n elements from the list.
+     */
+    void drop(int n);
 
     // debugging function
     // prints the root value in each element of the list

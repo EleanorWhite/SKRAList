@@ -99,3 +99,18 @@ int Skralist::getElem(int n) {
     }
     throw "Index out of bound error";    
 }
+
+void Skralist::drop(int n) {
+    int fstTreeSize = trees.front()->size;
+    if (fstTreeSize <= n) {
+        trees.pop_front();
+        this->drop(n-fstTreeSize);
+    } else {
+        if(n >= 1) {
+            this->pop();
+            this->drop(n-1);
+        }
+    }
+}
+
+

@@ -35,6 +35,7 @@ public:
      */
     bool hasChildren();
 
+
 private:
     // nothing, for now
 
