@@ -114,3 +114,10 @@ void Skralist::drop(int n) {
 }
 
 
+Skralist::iterator Skralist::end() {
+    return iterator();
+}
+
+Skralist::iterator Skralist::begin() {
+    return iterator(*this);
+}

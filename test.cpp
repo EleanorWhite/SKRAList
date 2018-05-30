@@ -28,6 +28,14 @@ int main() {
    }
    std::cout << "Successfully checked that 0-" << (numTest-1) << " are in list\n";
 
+   int j = numTest;
+   for (auto it = skrl->begin(); it != skrl->end(); ++it) {
+       j--;
+       assert(*it == j);
+   }
+   std::cout << "Successfully checked that 0-" << (numTest-1) << " were iterated through\n";
+
+
    for (int i = numTest-1; i >= 0; --i) {
        assert(skrl->pop() == i);
    }
